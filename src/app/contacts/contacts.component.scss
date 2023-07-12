@@ -1,0 +1,77 @@
+.content {
+    .add-employee-popup {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        height: 600px;
+        background-color: #fff;
+        box-shadow: 0px 0px 30px 2px black;
+        top: -37px;
+        @media(min-width: 1024px) {
+            left: 42%;
+            width: 56%;
+            transform: unset;
+        }
+        @media(min-width: 1200px) {
+            left: 25%;
+        }
+        @media(min-width: 1440px) {
+            left: 50%;
+            width: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    .title {
+        p {
+            font-weight: 700;
+            font-size: 20px;
+        }
+    }
+    .contact-details {
+        .details-container {
+            cursor: pointer;
+            border: 1px solid rgb(187 184 184);
+            .name {
+                font-size: 22px;
+                @media(min-width: 1300px) {
+                    font-size: 27px;
+                }
+            }
+        }
+    }
+    .personal-details {
+        .name {
+            p {
+                font-weight: 500;
+                font-size: 24px;
+                @media(min-width: 1300px) {
+                    font-weight: 600;
+                    font-size: 27px;
+                }
+            }
+        }
+        .email {
+            p {
+                font-size: 17px;
+            }
+        }
+        .mobile, .landline {
+            font-size: 16px;
+        }
+        .website {
+            font-size: 16px;
+        }
+        .address {
+            font-size: 16px;
+        }
+    }
+    .edit-container {
+        .edit {
+            cursor: pointer;
+            span {
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+    };
+}

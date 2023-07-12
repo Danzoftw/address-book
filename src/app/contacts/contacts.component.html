@@ -1,0 +1,75 @@
+<div class="content" role="main">
+    <section class="">
+        <div class="container-fluid ps-xl-4">
+            <div class="title">
+                <p class="mb-0 ps-lg-4 py-4">CONTACTS</p>
+            </div>
+            <div class="row position-relative">
+                <div *ngIf="toggler || editToggler" class="position-absolute add-employee-popup p-3 p-md-4">
+                    <app-add-employee></app-add-employee>
+                </div>               
+                <div class="col-12 col-md-5 col-xl-3 ps-lg-4 ps-xl-3">
+                    <div class="contacts px-xl-3 pt-0">
+                        <div class="contact-details">
+                            <div *ngFor="let item of allDetails; let i = index" (click)="selectItem(i)">
+                                <div class="details-container py-2 ps-3">
+                                    <p class="name mb-2">{{item.name}}</p>
+                                    <p class="email mb-0 ps-2">{{item.email}}</p>
+                                    <p class="mobile mb-0 ps-2">{{item.mobile}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 col-xl-3 pt-4 pt-md-0 ">
+                    <div class="personal-details ps-2 ps-xl-5">
+                        <div *ngIf="selectedItem" class="pl-3">
+                            <div class="name">
+                                <p class="name mb-2">{{selectedItem.name}}</p>
+                            </div>
+                            <div class="email py-3">
+                                <p class="mb-0">Email: {{ selectedItem.email }}</p>
+                            </div>
+                            <div class="mobile">
+                                <p class="mb-0">Mobile: +{{ selectedItem.mobile }}</p>
+                            </div>
+                            <div class="landline pb-3">
+                                <p>Landline: {{ selectedItem.landline }}</p>
+                            </div>
+                            <div class="website pb-3">
+                                <p>Website: {{ selectedItem.website }}</p>
+                            </div>
+                            <div class="address d-flex">
+                                <div class="address-title">
+                                    <p>Address:</p>
+                                </div>
+                               <div class="address-content ps-2">
+                                    <span>{{ formatAddress(selectedItem.address) }}</span>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-2 pb-3 pb-lg-0 d-inline-flex edit-container h-100 pt-4 pt-xl-0 flex-md-column align-md-start flex-xl-row">
+                    <div (click)="handleEdit()" class="edit pe-2 ps-2 ps-md-0 d-flex align-items-center">
+                        <div class="edit-img">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                              </svg>
+                        </div>
+                        <span class="ps-2">EDIT</span>
+                    </div>
+                    <div (click)="handleDelete()" class="edit delete d-flex align-items-center ps-xl-4">
+                        <div class="edit-img">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+                                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                              </svg>
+                        </div>
+                        <span class="ps-2">DELETE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

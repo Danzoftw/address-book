@@ -25,15 +25,13 @@
   }
 
   .toolbar {
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: #3399CC;
-    color: white;
-    font-weight: 600;
+    .address-book-title {
+      background-color: #3399CC;
+      span {
+        color: white;
+        font-weight: 400;
+      }
+    }
   }
 
   .toolbar img {
@@ -290,8 +288,8 @@
     }
   }
   .navigation {
-    background-color: #413b3b;
-    position: absolute;
+    background-color: #333333;
+    // position: absolute;
     left: 0;
     bottom: -40px;
     right: 0;
@@ -303,8 +301,14 @@
     color: #fff;
     @media(min-width: 768px) {
       font-size: 21px;
+      font-weight: 600;
     }
   }
   .address-book {
-    font-size: 26px;
+    font-size: 45px;
+    line-height: 45px;
+    letter-spacing: 4px;
+    @media(min-width: 1200px) {
+      font-size: 55px;
+    }
   }

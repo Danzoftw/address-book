@@ -1,0 +1,56 @@
+<div class="content" role="main">
+    <section>
+        <form>
+            <div class="add-employee-container flex justify-content-center position-relative">
+                <div class="name d-flex flex-column pb-3">
+                    <label for="name">Name</label>
+                    <input *ngIf="toggler" name="name" required id="name" type="text" class="w-100" pInputText [(ngModel)]="name" />
+                    <input *ngIf="editToggler && !toggler" placeholder={{selectedItem.name}} name="name" required id="name" type="text" class="" pInputText [(ngModel)]="name" />
+                </div>
+                <div class="email d-flex flex-column pb-3">
+                    <label for="email">Email</label>
+                    <input *ngIf="toggler" name="email" required id="email" type="text" class="" pInputText [(ngModel)]="email" />
+                    <input *ngIf="editToggler && !toggler" placeholder={{selectedItem.email}} name="email" required id="email" type="text" class="" pInputText [(ngModel)]="email" />
+                </div>
+                <div class="contact-details d-flex pb-3">
+                    <div class="mobile w-50 pe-2 d-flex flex-column">
+                        <label for="mobile">Mobile</label>
+                        <input *ngIf="toggler" name="mobile" required id="mobile" type="text" class="w-100" pInputText [(ngModel)]="mobile" />
+                        <input *ngIf="editToggler && !toggler" placeholder={{selectedItem.mobile}} name="mobile" required id="mobile" type="text" class="w-100" pInputText [(ngModel)]="mobile" />
+                    </div>
+                    <div class="landline w-50 ps-2 d-flex flex-column">
+                        <label for="landline">Landline</label>
+                        <input *ngIf="toggler" name="landline" required id="landline" type="text" class="w-100" pInputText [(ngModel)]="landline" />
+                        <input *ngIf="editToggler && !toggler" placeholder={{selectedItem.landline}} name="landline" required id="landline" type="text" class="w-100" pInputText [(ngModel)]="landline" />
+                    </div>
+                </div>
+                <div class="website d-flex flex-column pb-3">
+                    <label for="website">Website</label>
+                    <input *ngIf="toggler" name="website" required id="website" type="text" class="" pInputText [(ngModel)]="website" />
+                    <input *ngIf="editToggler && !toggler" placeholder={{selectedItem.website}} name="website" required id="website" type="text" class="" pInputText [(ngModel)]="website" />
+                </div>
+                <div class="address d-flex flex-column pb-3">
+                    <label for="address">Address</label>
+                    <textarea *ngIf="toggler" name="address" required id="address" rows="5" cols="30" pInputTextarea [autoResize]="true" [(ngModel)]="address"></textarea>
+                    <textarea *ngIf="editToggler && !toggler" placeholder={{selectedItem.address}} name="address" required id="address" rows="5" cols="30" pInputTextarea [autoResize]="true" [(ngModel)]="address"></textarea>
+                </div>
+                <div  *ngIf="toggler" class="add-btn position-absolute">
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" (click)="handleSubmit()" class="px-5 py-2">Add</button>
+                    </div>
+                </div>
+                <div *ngIf="editToggler && !toggler" class="add-btn submit-btn position-absolute">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" (click)="isHandleEditSubmit()" class="px-5 py-2">Update</button>
+                    </div>
+                </div>
+                <div *ngIf="toggler" class="close position-absolute">
+                    <button (click)="onDisplayToggle('close')" type="button" class="btn-close" aria-label="Close"></button>
+                </div>
+                <div *ngIf="editToggler"class="close edit-close position-absolute">
+                    <button (click)="handleEdit()" type="button" class="btn-close" aria-label="Close"></button>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>

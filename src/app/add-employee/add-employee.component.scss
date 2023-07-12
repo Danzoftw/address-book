@@ -1,0 +1,47 @@
+.content {
+    .add-employee-container {
+        label {
+            font-weight: 700;
+        }
+        .add-employee-container {
+            width: 100%;
+            @media(min-width: 768px) {
+                width: 75%;
+            }
+        }
+    }
+    .add-btn {
+        right: 0;
+        button {
+            background-color: #468C00;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                color: black;
+                box-shadow: 0px 0px 4px 2px #468C00;
+            }
+        }
+        &.submit-btn {
+            right: 0;
+        }
+    }
+    .close {
+        top: -7px;
+        right: -8px;
+        @media(min-width: 768px) {
+            top: -12px;
+            right: -11px;
+        }
+    }
+    .edit-employee-container {
+        .edit-close{
+            top: -15px;
+            right: -15px;
+        }
+    }
+}
